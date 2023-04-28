@@ -2,9 +2,13 @@ import { Text } from "@react-three/drei";
 import { Vector3 } from "three";
 import { useFrame } from "@react-three/fiber";
 
-const Sphere = ({ sphere, speed, size }: any) => {
+const Sphere = ({ speed, size, index, count }: any) => {
+  const gap = 3;
+  const thisSpherePositionX =
+    (-(size + gap) * count) / 2 + index * (size + gap);
+
   return (
-    <group ref={sphere} position={[50, 50, 50]}>
+    <group position={[thisSpherePositionX, 0, 0]}>
       <Text
         color={"#0000ff"}
         fontSize={1}
@@ -12,8 +16,8 @@ const Sphere = ({ sphere, speed, size }: any) => {
         lineHeight={1}
         letterSpacing={-0.02}
         textAlign={"center"}
-        anchorX='center'
-        anchorY='middle'
+        anchorX="center"
+        anchorY="middle"
       >
         Test
       </Text>

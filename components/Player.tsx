@@ -27,8 +27,8 @@ export default function Player({ movement }: any) {
   useCameraData.setState({ activeCamera: camera });
   const spheres = [
     { size: 1, speed: 1 },
-    // { size: 2, speed: 1 / 2 },
-    // { size: 3, speed: 1 / 3 },
+    { size: 2, speed: 1 / 2 },
+    { size: 3, speed: 1 / 3 },
   ];
 
   const [velocity, setVelocity] = useState<Vector3>(new Vector3(1, 1, 2));
@@ -78,10 +78,24 @@ export default function Player({ movement }: any) {
     sphere.current.position.clamp(min, max);
   });
 
+  const sphereCount = spheres.length;
   return (
     <>
       <Camera camera={camera} sphere={sphere} />
-      <Sphere sphere={sphere} />
+      <group ref={sphere} position={[50, 50, 50]}>
+        {spheres.map((item, index) => {
+          return (
+            <Sphere
+              key={index}
+              index={index}
+              sphere={sphere}
+              speed={item.speed}
+              size={item.size}
+              count={sphereCount}
+            />
+          );
+        })}
+      </group>
     </>
   );
 }
