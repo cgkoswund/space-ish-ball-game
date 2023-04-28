@@ -1,0 +1,30 @@
+{
+    "name": "next",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@react-three/drei": "^9.40.0",
+        "@react-three/fiber": "^8.9.1",
+        "gsap": "^3.11.5",
+        "next": "13.0.1",
+        "random-seed": "^0.3.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "three": "^0.146.0",
+        "zustand": "^4.3.7"
+    },
+    "devDependencies": {
+        "@types/node": "18.11.9",
+        "@types/random-seed": "^0.3.3",
+        "@types/react": "18.0.24",
+        "@types/react-dom": "18.0.8",
+        "@types/three": "^0.146.0",
+        "typescript": "4.8.4"
+    }
+}
